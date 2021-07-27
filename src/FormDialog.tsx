@@ -11,7 +11,7 @@ import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 interface myProps{
     open: boolean,
     name: string,
-    changeName: any
+    changeName: any // this is a changeName fucntion which we receive from the parent 
 }
 
 // export default function FormDialog() {

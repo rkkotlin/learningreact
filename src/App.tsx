@@ -8,6 +8,7 @@ import FormDialog from './FormDialog';
 function App() {
 
  const  [open, setOpen]= React.useState(false)
+ // changeName function below is used to pass the value of name in the modal screen back to this screen. 
  const changeName = (name:string) => {
   setName(name );
 }
