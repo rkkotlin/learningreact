@@ -6,7 +6,11 @@ import { convertCompilerOptionsFromJson } from 'typescript';
 import FormDialog from './FormDialog';
 
 function App() {
+
  const  [open, setOpen]= React.useState(false)
+ const changeName = (name:string) => {
+  setName(name );
+}
  const [name,setName]= React.useState('')
  const handleClickOpen = () =>{
      setOpen(true)
@@ -28,26 +32,11 @@ const handleClickSave = () => {
      
          Hello World  and {name}
          <div>
-         <Button onClick={handleClickOpen} color="primary">Open Dialog</Button>
-         {/* <MyDialog open={open}></MyDialog> */}
+      
 
          <div>
-           <FormDialog open={open} name={name}></FormDialog>
-         {/* <Dialog open={open}>
-         Hello in a dialog
-          <div>
-            <TextField label="Name"  >
- 
-            </TextField>
-          </div>
-           <Button onClick={handleClickClose} color="primary">
-             Cancel
-           </Button>
-           <Button onClick={handleClickSave} color="primary">
-             Save
-           </Button>
- 
-         </Dialog> */}
+           <FormDialog open={open} name={name} changeName={changeName}></FormDialog>
+
          </div>
          </div>
 

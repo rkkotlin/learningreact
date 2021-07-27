@@ -6,10 +6,12 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 
 interface myProps{
     open: boolean,
-    name: string
+    name: string,
+    changeName: any
 }
 
 // export default function FormDialog() {
@@ -21,8 +23,7 @@ interface myProps{
     setOpen(true);
   };
   const handleSave = () => {
-
-    console.log(name)
+    //   handleNameChange()
     handleClose()
   };
   const handleClose = () => {
@@ -31,7 +32,7 @@ interface myProps{
 
   // The below code handles the change in textfield which assigns to the name in this component. 
   const handleNameChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void =>{
-      setName(e.target.value)
+      props.changeName(e.target.value)
   }
 
   return (
